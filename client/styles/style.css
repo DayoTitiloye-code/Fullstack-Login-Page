@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(95, 141, 78);
+    background: linear-gradient(90deg, rgba(95, 141, 78, 1) 10%, rgba(40, 84, 48, 1) 90%);
+    font-family: 'Quicksand', sans-serif;
+}
+
+form{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: auto;
+    padding: 45px 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: #E5D9B6;
+}
+
+form input{
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 5px;
+    /* border-radius: 20px; */
+    border: none;
+    background-color: grey;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+form input::placeholder{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+form input:focus{
+    outline: none;
+}
+
+form label{
+    text-align: center;
+    font-size: 18px;
+}
