@@ -1,0 +1,39 @@
+version: '3'
+services:
+  server:
+    container_name: login_registration_server_test
+    image: node:latest
+    working_dir: /app
+    ports:
+      - 3000:3000
+    environment:
+      - PGUSER=dayo
+      - PGPASSWORD=password
+      - PGDATABASE=login_registration_db_test
+      - PGHOST=db
+      - PGPORT=5432
+      - SECRET_PASSWORD=${PASS}
+      - NODE_ENV=test
+    volumes:
+      - type: bind
+        source: ./server
+        target: /app
+    depends_on:
+      - db
+    command: bash -c "npm i && npm run seed && npm run start"
+
+  db:
+    container_name: login_registration_db_test
+    image: postgres:12.4
+    environment:
+      - POSTGRES_USER=dayo
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=login_registration_db_test
+    volumes:
+      - "./server/db/migrations:/docker-entrypoint-initdb.d/:ro"
+      - "dbdata:/var/lib/postgresql/data"
+volumes:
+  test_db:
+networks: 
+  default:
+    name: login_registration
