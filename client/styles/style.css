@@ -8,6 +8,11 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 
+h1{
+    margin-left: 10px;
+    font-size: 40px;
+}
+
 form{
     /* border: 1px solid black; */
     display: flex;
@@ -25,13 +30,13 @@ form input{
     padding: 5px;
     /* border-radius: 20px; */
     border: none;
-    background-color: grey;
+    /* background-color: grey; */
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     font-family: 'Quicksand', sans-serif;
 }
 
 form input::placeholder{
-    color: white;
+    color: black;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -42,4 +47,18 @@ form input:focus{
 form label{
     text-align: center;
     font-size: 18px;
+}
+
+#btn{
+    width: 50%;
+    margin: 20px auto 10px auto;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background: rgb(95, 141, 78);
+    background: linear-gradient(90deg, rgba(95, 141, 78, 1) 10%, rgba(40, 84, 48, 1) 90%);
+    color: white;
+    transition: 0.5s;
+    
 }
